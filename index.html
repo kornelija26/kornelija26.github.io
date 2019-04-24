@@ -103,19 +103,47 @@ if (state [row][col] === '-') {
       console.log(`Element: ${element}, Row: ${row}, col: ${col}`);
       // Pabaigti. (Vietoj doges turetu but X arba O) hehe
 if (xturn === true) {
-      element.innerHTML = "o"
-state [row][col] = "o"
-}
+	element.innerHTML = "o"
+	state [row][col] = "o"
+	}
 else {
-element.innerHTML = "x"
-state [row][col] = "x"
+	element.innerHTML = "x"
+	state [row][col] = "x"
+	}
 }
-}
-
       document.getElementById("turnIndicator").innerHTML = xturn;
-      checkForWin();
+checkforWin();
     }
-    function checkForWin() {
+ function checkforWin() {
+for (let i = 0; i<3; i++)  { console.log (state[i]);
+if (state [i][0] == "x" && state [i][1] == "x" && state [i][2] == "x") {
+	 document.getElementById("turnIndicator").innerHTML = "X laimi";
+}
+else if (state [i][0] == "o" && state [i][1] == "o" && state [i][2] == "o") {
+	 document.getElementById("turnIndicator").innerHTML = "O laimi";
+
+}
+}
+for (let j = 0; j<3; j++) {
+if (state [0][j] == "x" && state [1][j] == "x" && state [2][j] == "x") {
+ document.getElementById("turnIndicator").innerHTML = "X laimi"
+}
+else if (state [0][j] == "o" && state [1][j] == "o" && state [2][j] == "o") {
+ document.getElementById("turnIndicator").innerHTML = "O laimi"
+}
+}
+if (state [0][0]=="x" && state [1][1]=="x" && state [2][2]=="x") {
+document.getElementById("turnIndicator").innerHTML = "X laimi"}
+if (state [0][0]=="o" && state [1][1]=="o" && state [2][2]=="o") {
+document.getElementById("turnIndicator").innerHTML = "O laimi"}
+if (state [2][0]=="x" && state [1][1]=="x" && state [0][2]=="x") {
+document.getElementById("turnIndicator").innerHTML = "X laimi"}
+if (state [2][0]=="o" && state [1][1]=="o" && state [0][2]=="o") {
+document.getElementById("turnIndicator").innerHTML = "O laimi"}
+for (let a=0; a<3; a++) {
+if (state [a][0] != "-" && state [a][1] != "-" && state [a][2] != "-" && state [0][a] != "-" && state [1][a] != "-" && state [2][a] != "-") {
+document.getElementById("turnIndicator").innerHTML = "Lygiosios"}
+}
       // Pabaigti;
     }
   </script>
