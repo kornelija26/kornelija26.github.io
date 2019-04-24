@@ -90,7 +90,7 @@
         <div onClick="move(this, 2, 1)" class="eight"></div>
         <div onClick="move(this, 2, 2)" class="nine"></div>
         <div id="turnIndicator" class="ten">X turn</div>
-    </div>
+    </div>ge
   </body>
   <script>
     let xturn = true;
@@ -98,11 +98,15 @@
                    ['-', '-', '-'],
                    ['-', '-', '-']];
     function move(element, row, col) {
+	xturn = !xturn
       console.log(`Element: ${element}, Row: ${row}, col: ${col}`);
       // Pabaigti. (Vietoj doges turetu but X arba O) hehe
-      element.innerHTML = "<img src='doge.jpg'/>";
+if (xturn === true) {
+      element.innerHTML = "o"
+}
+else element.innerHTML = "x"
 
-      document.getElementById("turnIndicator").innerHTML = "??";
+      document.getElementById("turnIndicator").innerHTML = xturn;
       checkForWin();
     }
     function checkForWin() {
