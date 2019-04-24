@@ -98,13 +98,19 @@
                    ['-', '-', '-'],
                    ['-', '-', '-']];
     function move(element, row, col) {
+if (state [row][col] === '-') {
 	xturn = !xturn
       console.log(`Element: ${element}, Row: ${row}, col: ${col}`);
       // Pabaigti. (Vietoj doges turetu but X arba O) hehe
 if (xturn === true) {
       element.innerHTML = "o"
+state [row][col] = "o"
 }
-else element.innerHTML = "x"
+else {
+element.innerHTML = "x"
+state [row][col] = "x"
+}
+}
 
       document.getElementById("turnIndicator").innerHTML = xturn;
       checkForWin();
